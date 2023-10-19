@@ -1,4 +1,4 @@
-﻿namespace Bookify.Domain.Apartments;
+﻿namespace Bookify.Domain.Shared;
 
 public record Currency
 {
@@ -8,8 +8,8 @@ public record Currency
     public static readonly Currency Xof = new("XOF");
     public static readonly IReadOnlyCollection<Currency> All = new[]
     {
-        Usd, 
-        Eur, 
+        Usd,
+        Eur,
         Xof
     };
     public Currency(string code)
