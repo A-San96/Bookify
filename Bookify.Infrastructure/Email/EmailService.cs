@@ -1,6 +1,6 @@
 ﻿using Bookify.Application.Abstractions.Email;
 
-namespace Booking.Infrastructure.Email;
+namespace Bookify.Infrastructure.Email;
 
 internal sealed class EmailService : IEmailService
 {

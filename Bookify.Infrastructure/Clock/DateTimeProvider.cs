@@ -1,6 +1,6 @@
 ﻿using Bookify.Application.Abstractions.Clock;
 
-namespace Booking.Infrastructure.Clock;
+namespace Bookify.Infrastructure.Clock;
 
 internal sealed class DateTimeProvider : IDateTimeProvider
 {

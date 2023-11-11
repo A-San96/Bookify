@@ -1,4 +1,5 @@
 ﻿using Bookify.Domain.Apartments;
+using Bookify.Domain.Bookings;
 using Bookify.Domain.Reviews;
 using Bookify.Domain.Users;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +26,7 @@ internal sealed class ReviewConfiguration : IEntityTypeConfiguration<Review>
             .WithMany()
             .HasForeignKey(review => review.ApartmentId);
 
-        builder.HasOne<Domain.Bookings.Booking>()
+        builder.HasOne<Booking>()
             .WithMany()
             .HasForeignKey(review => review.BookingId);
 
