@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookify.Application", "Bookify.Application\Bookify.Application.csproj", "{A501FA31-2DA9-4CA9-A39B-B982369FC54E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,12 +26,17 @@ Global
 		{AF16317D-BBE9-4A20-85B0-2C718FB8B83D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF16317D-BBE9-4A20-85B0-2C718FB8B83D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF16317D-BBE9-4A20-85B0-2C718FB8B83D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A501FA31-2DA9-4CA9-A39B-B982369FC54E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A501FA31-2DA9-4CA9-A39B-B982369FC54E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A501FA31-2DA9-4CA9-A39B-B982369FC54E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A501FA31-2DA9-4CA9-A39B-B982369FC54E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AF16317D-BBE9-4A20-85B0-2C718FB8B83D} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{A501FA31-2DA9-4CA9-A39B-B982369FC54E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C29D7E82-1053-406A-A1B3-5404350DAA0F}
