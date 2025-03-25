@@ -44,5 +44,7 @@ internal sealed class ApartmentConfiguration : IEntityTypeConfiguration<Apartmen
                     .HasConversion(currency => currency.Code, code => Currency.FromCode(code));
             }
         );
+
+        builder.Property<uint>("Version").IsRowVersion();
     }
 }
