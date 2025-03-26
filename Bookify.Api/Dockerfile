@@ -4,8 +4,8 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER $APP_UID
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+EXPOSE 8080
+EXPOSE 8081
 
 
 # This stage is used to build the service project
@@ -13,6 +13,9 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Bookify.Api/Bookify.Api.csproj", "Bookify.Api/"]
+COPY ["Bookify.Application/Bookify.Application.csproj", "Bookify.Application/"]
+COPY ["Bookify.Domain/Bookify.Domain.csproj", "Bookify.Domain/"]
+COPY ["Bookify.Infrastructure/Bookify.Infrastructure.csproj", "Bookify.Infrastructure/"]
 RUN dotnet restore "./Bookify.Api/Bookify.Api.csproj"
 COPY . .
 WORKDIR "/src/Bookify.Api"
