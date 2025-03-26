@@ -24,6 +24,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 
     app.ApplyMigrations();
+
+    // Uncomment below code and run the app for seed data. After seeding, comment it back.
+    //app.SeedData();
 }
 
 app.UseHttpsRedirection();
