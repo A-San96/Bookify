@@ -27,4 +27,11 @@ public sealed class User : Entity
 
         return user;
     }
+
+    public void SetIdentityId(string identityId)
+    {
+        IdentityId = identityId;
+    }
+
+    public string IdentityId { get; set; }
 }
