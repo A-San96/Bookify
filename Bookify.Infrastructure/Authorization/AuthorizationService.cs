@@ -22,4 +22,18 @@ public class AuthorizationService
 
         return roles;
     }
+
+    public async Task<HashSet<string>> GetPermissionsForUserAsync(string identityId)
+    {
+        var roles = await _dbContext.Set<Role>().Select(r => r.Permissions).FirstAsync();
+        var permissions = await _dbContext
+            .Set<User>()
+            .Where(user => user.IdentityId == identityId)
+            .SelectMany(user => user.Roles.Select(role => role.Permissions))
+            .FirstAsync();
+
+        var permissionsSet = permissions.Select(p => p.Name).ToHashSet();
+
+        return permissionsSet;
+    }
 }
