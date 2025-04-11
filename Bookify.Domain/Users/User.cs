@@ -22,7 +22,7 @@ public sealed class User : Entity
     public Email Email { get; private set; }
     public string IdentityId { get; set; } = string.Empty;
 
-    public IReadOnlyCollection<Role> Roles => _roles.ToList();
+    public IReadOnlyCollection<Role> Roles => _roles;
 
     public static User Create(FirstName firstName, LastName lastName, Email email)
     {
