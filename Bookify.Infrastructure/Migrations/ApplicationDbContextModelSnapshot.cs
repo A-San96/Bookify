@@ -221,25 +221,11 @@ namespace Bookify.Infrastructure.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("permission_id");
 
-                    b.Property<int?>("PermissionId1")
-                        .HasColumnType("integer")
-                        .HasColumnName("permission_id1");
-
-                    b.Property<int?>("RoleId1")
-                        .HasColumnType("integer")
-                        .HasColumnName("role_id1");
-
                     b.HasKey("RoleId", "PermissionId")
                         .HasName("pk_role_permissions");
 
                     b.HasIndex("PermissionId")
                         .HasDatabaseName("ix_role_permissions_permission_id");
-
-                    b.HasIndex("PermissionId1")
-                        .HasDatabaseName("ix_role_permissions_permission_id1");
-
-                    b.HasIndex("RoleId1")
-                        .HasDatabaseName("ix_role_permissions_role_id1");
 
                     b.ToTable("role_permissions", (string)null);
 
@@ -598,26 +584,12 @@ namespace Bookify.Infrastructure.Migrations
                         .IsRequired()
                         .HasConstraintName("fk_role_permissions_permissions_permission_id");
 
-                    b.HasOne("Bookify.Domain.Users.Permission", "Permission")
-                        .WithMany()
-                        .HasForeignKey("PermissionId1")
-                        .HasConstraintName("fk_role_permissions_permissions_permission_id1");
-
                     b.HasOne("Bookify.Domain.Users.Role", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("fk_role_permissions_roles_role_id");
-
-                    b.HasOne("Bookify.Domain.Users.Role", "Role")
-                        .WithMany()
-                        .HasForeignKey("RoleId1")
-                        .HasConstraintName("fk_role_permissions_roles_role_id1");
-
-                    b.Navigation("Permission");
-
-                    b.Navigation("Role");
                 });
 
             modelBuilder.Entity("RoleUser", b =>
